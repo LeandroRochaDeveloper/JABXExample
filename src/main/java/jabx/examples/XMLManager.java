@@ -15,6 +15,7 @@ import javax.xml.bind.Unmarshaller;
 /**
  *
  * @author Leandro
+ *
  * Fonte de pesquisa:
  * http://www.joimporturnaldev.com/1234/jaxb-tutorial-example-to-convert-object-to-xml-and-xml-to-object
  * https://jaxb.java.net/tutorial/. 
@@ -33,7 +34,20 @@ public class XMLManager {
         XMLClass.class,
     };
     
-    public static void main(String[] args) {        
+    public static void main(String[] args) {  
+        String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><RootElement>\n" +
+                        "    <element1 id=\"1\" atributo=\"atributo\">\n" +
+                        "        <elemento2>ele2</elemento2>\n" +
+                        "    </element1>\n" +
+                        "    <pessoas>\n" +
+                        "        <endereco>Rua</endereco>\n" +
+                        "    </pessoas>\n" +
+                        "    <pessoas>\n" +
+                        "        <endereco>Rua</endereco>\n" +
+                        "    </pessoas>\n" +
+                        "</RootElement>";
+        XMLClass objeto = (XMLClass) jaxbXMLStringToObject(xml);
+        System.out.println(objeto.getElement1().getAtributo());
     }
     
     /* String XML para objeto */
