@@ -45,7 +45,7 @@ public class XMLManager {
                         "    <pessoas>\n" +
                         "        <endereco>Rua</endereco>\n" +
                         "    </pessoas>\n" +
-                        "</RootElement>";
+                        "</RootElement>"; 
         XMLClass objeto = (XMLClass) jaxbXMLStringToObject(xml);
         System.out.println(objeto.getElement1().getAtributo());
     }
